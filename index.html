@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dos 90K Perdidos à Volta por Cima</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000000;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #00ff55;
+      color: #000;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      padding: 20px;
+    }
+    .cta-button {
+      background-color: #ff6600;
+      color: #fff;
+      padding: 15px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    .image-highlight {
+      border: 5px solid #00ff55;
+      border-radius: 20px;
+      display: block;
+      margin: 30px auto;
+      max-width: 90%;
+    }
+    .video-section, .testemunhos, .faq, .image-upload, .proof-section {
+      margin: 40px 0;
+    }
+    h2 {
+      color: #00ff55;
+    }
+    .faq-item {
+      margin-bottom: 20px;
+    }
+    .faq-item h4 {
+      color: #ff6600;
+    }
+    .proof-section img {
+      border: 3px solid #00ff55;
+      border-radius: 15px;
+      margin: 10px auto;
+      display: block;
+      max-width: 95%;
+    }
+    .highlight-callout {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-left: 5px solid #00ff55;
+      margin: 30px 0;
+    }
+    .contador-visitas {
+      background-color: #111;
+      padding: 10px;
+      color: #00ff55;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+    #whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border: none;
+      padding: 15px 20px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 24px;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Dos 90K Perdidos à Volta por Cima</h1>
+    <p>Descubra como transformar perdas em lucros REAIS com jogos, trading e e-books</p>
+  </header>
+
+  <div class="container">
+
+    <div class="contador-visitas">
+      🔒 <span id="contador">310</span> pessoas estão visualizando esta página agora e adquirindo o livro!
+    </div>
+
+    <img src="URL_DA_SUA_IMAGEM_PESSOAL_AQUI" alt="Sua imagem" class="image-highlight">
+
+    <section class="video-section">
+      <h2>Assista ao vídeo e entenda por que este livro pode mudar sua vida:</h2>
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_AQUI" frameborder="0" allowfullscreen></iframe>
+    </section>
+
+    <section class="benefits">
+      <h2>O que você vai aprender:</h2>
+      <ul>
+        <li>Como ganhar dinheiro com jogos online (Backbu/Casino)</li>
+        <li>Como criar e vender e-books mesmo do zero</li>
+        <li>Como usar criptomoedas e trading para gerar lucros diários</li>
+        <li>Como transformar conhecimento em renda passiva</li>
+      </ul>
+    </section>
+
+    <section class="proof-section">
+      <h2>Veja os resultados REAIS que eu obtive com jogos:</h2>
+      <p>Se você quer ter resultados como estes, adquira agora o livro e siga o passo a passo!</p>
+      <img src="URL_DO_PRINT_BACKBU" alt="Resultados no Backbu">
+
+      <h2>Veja os ganhos com a venda de e-books:</h2>
+      <p>Você também pode transformar suas histórias em lucro!</p>
+      <img src="URL_DO_PRINT_HOTMART" alt="Ganhos na Hotmart">
+    </section>
+
+    <section class="testemunhos">
+      <h2>Depoimentos de quem já comprou</h2>
+      <img src="URL_DA_IMAGEM_DE_PROVA_SOCIAL" alt="Prova social" class="image-highlight">
+    </section>
+
+    <section class="faq">
+      <h2>Dúvidas Frequentes</h2>
+      <div class="faq-item">
+        <h4>Esse método funciona mesmo?</h4>
+        <p>Sim! Este livro é baseado em experiências reais e comprovadas.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Preciso investir dinheiro para começar?</h4>
+        <p>Você pode começar com o que tem. O livro ensina diferentes formas de começar sem grandes investimentos.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Depois da compra, como recebo o livro?</h4>
+        <p>Após o pagamento, o acesso será imediato via e-mail.</p>
+      </div>
+    </section>
+
+    <div class="highlight-callout">
+      <h2>Não perca mais tempo!</h2>
+      <p>Já são centenas de pessoas mudando de vida. Agora é sua vez. Adquira o livro e comece hoje a sua transformação.</p>
+    </div>
+
+    <button class="cta-button" onclick="window.location.href='https://SEULINKDECOMPRA.com'">Adquirir Agora por 24,90€</button>
+
+  </div>
+
+  <button id="whatsapp-button" onclick="window.location.href='https://wa.me/SEUNUMERO'">
+    💬
+  </button>
+
+  <script>
+    let contador = 310;
+    setInterval(() => {
+      contador++;
+      document.getElementById("contador").textContent = contador;
+    }, 1000);
+  </script>
+</body>
+</html>
