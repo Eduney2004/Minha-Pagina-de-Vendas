@@ -5,16 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dos 90K Perdidos à Volta por Cima</title>
   <style>
+    :root {
+      --verde: #00ff55;
+      --azul: #00bfff;
+      --preto: #000000;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      background-color: #000000;
+      background-color: var(--preto);
       color: #ffffff;
       margin: 0;
       padding: 0;
     }
     header {
-      background-color: #00ff55;
-      color: #000;
+      background-color: var(--verde);
+      color: var(--preto);
       padding: 20px;
       text-align: center;
     }
@@ -22,7 +28,7 @@
       padding: 20px;
     }
     .cta-button {
-      background-color: #ff6600;
+      background-color: var(--azul);
       color: #fff;
       padding: 15px 25px;
       font-size: 18px;
@@ -37,47 +43,52 @@
       50% { transform: scale(1.05); }
       100% { transform: scale(1); }
     }
-    .image-highlight {
-      border: 5px solid #00ff55;
-      border-radius: 20px;
-      display: block;
-      margin: 30px auto;
-      max-width: 90%;
-    }
-    .video-section, .testemunhos, .faq, .image-upload, .proof-section {
+
+    .video-section, .testemunhos, .faq, .proof-section {
       margin: 40px 0;
+      background-color: #0a0a0a;
+      padding: 20px;
+      border-radius: 10px;
     }
+
     h2 {
-      color: #00ff55;
+      color: var(--verde);
+    }
+    h4 {
+      color: var(--azul);
     }
     .faq-item {
       margin-bottom: 20px;
     }
-    .faq-item h4 {
-      color: #ff6600;
-    }
+
     .proof-section img {
-      border: 3px solid #00ff55;
+      border: 3px solid var(--verde);
       border-radius: 15px;
       margin: 10px auto;
       display: block;
       max-width: 95%;
     }
+
     .highlight-callout {
-      background-color: #1a1a1a;
+      background-color: var(--azul);
+      color: #000;
       padding: 20px;
-      border-left: 5px solid #00ff55;
+      border-left: 5px solid var(--verde);
       margin: 30px 0;
+      border-radius: 10px;
     }
+
     .contador-visitas {
       background-color: #111;
       padding: 10px;
-      color: #00ff55;
+      color: var(--azul);
       text-align: center;
       font-size: 18px;
       font-weight: bold;
       margin: 20px 0;
+      border-radius: 10px;
     }
+
     #whatsapp-button {
       position: fixed;
       bottom: 20px;
@@ -90,6 +101,36 @@
       cursor: pointer;
       font-size: 24px;
       z-index: 1000;
+    }
+
+    /* CARROSSEL DE IMAGENS */
+    .slider-container {
+      width: 100%;
+      max-width: 400px;
+      margin: 30px auto;
+      overflow: hidden;
+      border-radius: 15px;
+      border: 3px solid var(--azul);
+    }
+
+    .slider {
+      display: flex;
+      width: 200%;
+      animation: slide 6s infinite;
+    }
+
+    .slider img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    @keyframes slide {
+      0%   { transform: translateX(0); }
+      40%  { transform: translateX(0); }
+      50%  { transform: translateX(-100%); }
+      90%  { transform: translateX(-100%); }
+      100% { transform: translateX(0); }
     }
   </style>
 </head>
@@ -104,9 +145,15 @@
     <div class="contador-visitas">
       🔒 <span id="contador">310</span> pessoas estão visualizando esta página agora e adquirindo o livro!
     </div>
-    <img src="IMG_0993 2.JPG" alt="Imagem do produto" style="width: 100%; max-width: 400px; height: auto; display: block; margin: 0 auto;">
 
-   <section class="video-section">
+    <!-- Cronômetro de urgência -->
+    <div style="text-align: center; margin-top: 10px; font-size: 20px; font-weight: bold; color: var(--verde);">
+      ⏳ Oferta válida por: <span id="timer">4:00</span>
+    </div>
+
+    <img src="IMG_0993 2.JPG" alt="Imagem do produto" style="width: 100%; max-width: 400px; height: auto; display: block; margin: 0 auto; border: 2px solid var(--azul); border-radius: 10px;">
+
+    <section class="video-section">
       <h2>Assista ao vídeo e entenda por que este livro pode mudar sua vida:</h2>
       <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_AQUI" frameborder="0" allowfullscreen></iframe>
     </section>
@@ -124,11 +171,18 @@
     <section class="proof-section">
       <h2>Veja os resultados REAIS que eu obtive com jogos:</h2>
       <p>Se você quer ter resultados como estes, adquira agora o livro e siga o passo a passo!</p>
-      <img src="URL_DO_PRINT_BACKBU" alt="Resultados no Backbu">
+
+      <!-- CARROSSEL DE IMAGENS -->
+      <div class="slider-container">
+        <div class="slider">
+          <img src="IMG_0964 2.PNJ" alt="Extrato bancário" />
+          <img src="att.tvIR4nqmuvapJoe3S0RW9Cmvmllj1xgKiPJvkNhydV0" alt="Imagem adicional" />
+        </div>
+      </div>
 
       <h2>Veja os ganhos com a venda de e-books:</h2>
       <p>Você também pode transformar suas histórias em lucro!</p>
-     <img src="IMG_0964.png" alt="Extrato bancário Santander" width="500">
+      <img src="IMG_0964.png" alt="Extrato bancário Santander" width="500">
     </section>
 
     <section class="testemunhos">
@@ -161,16 +215,35 @@
 
   </div>
 
-  <button id="whatsapp-button" onclick="window.location.href='https://wa.me/SEUNUMERO'">
-    💬
-  </button>
+  <button id="whatsapp-button" onclick="window.location.href='https://wa.me/SEUNUMERO'">💬</button>
 
   <script>
-    let contador = 310;
-    setInterval(() => {
-      contador++;
-      document.getElementById("contador").textContent = contador;
+    // CONTADOR DE VISITANTES REALISTA
+    function atualizarContador() {
+      let numero = Math.floor(Math.random() * 20) + 301;
+      document.getElementById("contador").textContent = numero;
+    }
+    setInterval(atualizarContador, 2000);
+    atualizarContador();
+
+    // TEMPORIZADOR DE 4 MINUTOS
+    let tempoRestante = 4 * 60;
+    const tempoElemento = document.getElementById("timer");
+
+    const timerInterval = setInterval(() => {
+      const minutos = Math.floor(tempoRestante / 60);
+      const segundos = tempoRestante % 60;
+
+      tempoElemento.textContent = `${minutos}:${segundos < 10 ? '0' : ''}${segundos}`;
+
+      if (tempoRestante <= 0) {
+        clearInterval(timerInterval);
+        tempoElemento.textContent = "⚠️ Tempo esgotado!";
+      }
+
+      tempoRestante--;
     }, 1000);
   </script>
 </body>
 </html>
+
