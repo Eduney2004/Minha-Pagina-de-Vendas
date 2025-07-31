@@ -151,7 +151,12 @@
       ⏳ Oferta válida por: <span id="timer">4:00</span>
     </div>
 
-    <img src="IMG_0993 2.JPG" alt="Imagem do produto" style="width: 100%; max-width: 400px; height: auto; display: block; margin: 0 auto; border: 2px solid var(--azul); border-radius: 10px;">
+    <!-- TRÊS IMAGENS NO TOPO -->
+    <div style="display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; margin: 20px 0;">
+      <img src="IMG_1026.JPG" alt="Imagem lateral esquerda" style="width: 100%; max-width: 200px; height: auto; border-radius: 10px; border: 2px solid var(--azul);">
+      <img src="IMG_0993 2.JPG" alt="Imagem principal" style="width: 100%; max-width: 200px; height: auto; border-radius: 10px; border: 2px solid var(--azul);">
+      <img src="IMG_1027.JPG" alt="Imagem lateral direita" style="width: 100%; max-width: 200px; height: auto; border-radius: 10px; border: 2px solid var(--azul);">
+    </div>
 
     <section class="video-section">
       <h2>Assista ao vídeo e entenda por que este livro pode mudar sua vida:</h2>
@@ -175,8 +180,8 @@
       <!-- CARROSSEL DE IMAGENS -->
       <div class="slider-container">
         <div class="slider">
-          <img src="IMG_0964 2.PNJ" alt="Extrato bancário" />
-          <img src="att.tvIR4nqmuvapJoe3S0RW9Cmvmllj1xgKiPJvkNhydV0" alt="Imagem adicional" />
+          <img src="IMG_0964.png" alt="Extrato bancário" />
+          <img src="IMG_0965.png" alt="Imagem adicional" />
         </div>
       </div>
 
@@ -187,7 +192,7 @@
 
     <section class="testemunhos">
       <h2>Depoimentos de quem já comprou</h2>
-      <img src="IMG_1021.peg" alt="Prova social" width="1179">
+      <img src="IMG_1021.jpeg" alt="Prova social" width="1179">
     </section>
 
     <section class="faq">
@@ -218,7 +223,6 @@
   <button id="whatsapp-button" onclick="window.location.href='https://wa.me/SEUNUMERO'">💬</button>
 
   <script>
-    // CONTADOR DE VISITANTES REALISTA
     function atualizarContador() {
       let numero = Math.floor(Math.random() * 20) + 301;
       document.getElementById("contador").textContent = numero;
@@ -226,21 +230,17 @@
     setInterval(atualizarContador, 2000);
     atualizarContador();
 
-    // TEMPORIZADOR DE 4 MINUTOS
     let tempoRestante = 4 * 60;
     const tempoElemento = document.getElementById("timer");
 
     const timerInterval = setInterval(() => {
       const minutos = Math.floor(tempoRestante / 60);
       const segundos = tempoRestante % 60;
-
       tempoElemento.textContent = `${minutos}:${segundos < 10 ? '0' : ''}${segundos}`;
-
       if (tempoRestante <= 0) {
         clearInterval(timerInterval);
         tempoElemento.textContent = "⚠️ Tempo esgotado!";
       }
-
       tempoRestante--;
     }, 1000);
   </script>
