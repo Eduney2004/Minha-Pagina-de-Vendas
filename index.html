@@ -20,14 +20,15 @@
     }
 
     header {
-      background-color: var(--verde);
-      color: var(--preto);
-      padding: 20px;
+      background-color: #111;
+      padding: 40px 20px;
       text-align: center;
+      color: #fff;
     }
 
-    .container {
-      padding: 20px;
+    header h1 {
+      font-size: 32px;
+      color: var(--verde);
     }
 
     .cta-button {
@@ -40,63 +41,6 @@
       cursor: pointer;
       margin-top: 20px;
       animation: pulse 1.5s infinite;
-      display: none;
-    }
-
-    .urgencia-popup {
-      position: fixed;
-      bottom: 100px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #111;
-      color: var(--verde);
-      padding: 15px 25px;
-      border: 2px solid var(--azul);
-      border-radius: 10px;
-      font-weight: bold;
-      z-index: 999;
-      display: none;
-      animation: pulse 1.5s infinite;
-    }
-
-    .timer-oferta {
-      background-color: #111;
-      color: var(--azul);
-      text-align: center;
-      font-size: 20px;
-      font-weight: bold;
-      margin-top: 20px;
-      padding: 10px;
-      border-radius: 10px;
-      animation: pulse 2s infinite;
-      display: none;
-    }
-
-    .comentarios-falsos {
-      background-color: #0a0a0a;
-      margin-top: 40px;
-      border-radius: 10px;
-      padding: 20px;
-    }
-
-    .comentario {
-      border-bottom: 1px solid #333;
-      padding: 10px 0;
-    }
-
-    .comentario strong {
-      color: var(--verde);
-    }
-
-    .selo-urgente {
-      display: inline-block;
-      background-color: #ff0000;
-      color: white;
-      font-weight: bold;
-      padding: 5px 10px;
-      border-radius: 5px;
-      margin-top: 10px;
-      animation: pulse 1.5s infinite;
     }
 
     @keyframes pulse {
@@ -105,101 +49,177 @@
       100% { transform: scale(1); }
     }
 
-    video {
+    .container {
+      padding: 20px;
+    }
+
+    h2 {
+      color: var(--verde);
+    }
+
+    h4 {
+      color: var(--azul);
+    }
+
+    .video-section, .benefits, .proof-section, .testemunhos, .faq, .highlight-callout, .comentarios-falsos {
+      margin: 40px 0;
+      background-color: #0a0a0a;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .slider-container {
       width: 100%;
-      height: auto;
+      max-width: 600px;
+      margin: 30px auto;
+      overflow: hidden;
+      border-radius: 15px;
+      border: 3px solid var(--azul);
+    }
+
+    .slider {
+      display: flex;
+      width: 300%;
+      animation: slide 6s infinite;
+    }
+
+    .slider img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    @keyframes slide {
+      0%, 40%   { transform: translateX(0); }
+      50%, 90%  { transform: translateX(-100%); }
+      100%      { transform: translateX(0); }
+    }
+
+    .testemunhos {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .testemunhos img {
+      width: 45%;
+      height: 300px;
+      object-fit: cover;
+      border: 3px solid var(--verde);
+      border-radius: 10px;
+    }
+
+    .highlight-callout {
+      background-color: var(--azul);
+      color: #000;
+      padding: 20px;
+      border-left: 5px solid var(--verde);
+      border-radius: 10px;
+    }
+
+    .comentario {
+      border-top: 1px solid #333;
+      padding-top: 10px;
+      margin-top: 10px;
+    }
+
+    .comentario strong {
+      color: var(--verde);
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Dos 90K Perdidos à Volta por Cima</h1>
-    <p>Transforme perdas em lucros REAIS com jogos, trading e e-books</p>
+    <h1>"Perdi 90 MIL EUROS. Achei que minha vida tinha acabado..."</h1>
+    <p>Mas eu dei a volta por cima. Com meu celular, acesso à internet e estratégias simples com jogos online e e-books, comecei a faturar diariamente. Neste livro, eu te conto tudo, sem enrolação.</p>
+    <img src="IMG_0993 2.JPG" alt="Foto autor" style="width: 150px; border-radius: 100px; border: 3px solid #00ff55; margin-top: 20px;">
+    <button class="cta-button" onclick="window.location.href='https://pay.hotmart.com/K101107694A'">Quero meu acesso por 24,90€</button>
   </header>
 
   <div class="container">
-    <div id="video-section">
-      <h2>Assista ao vídeo:</h2>
-      <video id="meuVideo" controlslist="nodownload nofullscreen noremoteplayback" disablePictureInPicture disableRemotePlayback>
-        <source src="https://cdn.videvo.net/videvo_files/video/free/2023-10/large_watermarked/231003_01_DroneCityscape_4k_001_preview.mp4" type="video/mp4">
-        Seu navegador não suporta a reprodução de vídeo.
-      </video>
+    <section class="video-section">
+      <h2>Assista meu desabafo e veja como você também pode mudar sua vida:</h2>
+      <iframe width="100%" height="315"
+        src="https://www.youtube.com/embed/8M_JSSWb2Js?autoplay=1&loop=0&playlist=8M_JSSWb2Js&rel=0&modestbranding=1&controls=0"
+        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+      </iframe>
+    </section>
+
+    <section class="benefits">
+      <h2>O que você vai aprender no livro:</h2>
+      <ul style="font-size: 18px;">
+        <li>✔️ Como gerar lucro real com jogos online (Backbu e Cassino)</li>
+        <li>✔️ Como vender e-books mesmo começando do zero</li>
+        <li>✔️ Estratégias para ganhar com criptomoedas e trading simples</li>
+        <li>✔️ Como criar renda passiva com seu conhecimento</li>
+        <li>✔️ A mentalidade que me tirou do buraco e pode te tirar também</li>
+      </ul>
+      <button class="cta-button" onclick="window.location.href='https://pay.hotmart.com/K101107694A'">Quero aprender agora</button>
+    </section>
+
+    <section class="proof-section">
+      <h2>Resultados REAIS que tive aplicando o que ensino:</h2>
+      <div class="slider-container">
+        <div class="slider">
+          <img src="IMG_0964 2.PNG" alt="Extrato bancário" />
+          <img src="att.tvlR4nqmuvapJoe3S0RW9Cmvmllj1xgKiPJvkNhydV0 2.JPG" alt="Imagem 2" />
+          <img src="att.7D2mA7H5alvrLfzj4gVRvPcACTDZjIU7EPv086Q4iAM.JPG" alt="Imagem 3" />
+        </div>
+      </div>
+    </section>
+
+    <section class="testemunhos">
+      <h2>O que estão dizendo:</h2>
+      <img src="IMG_1020.PNG" alt="Depoimento 1">
+      <img src="IMG_1021.jpg" alt="Depoimento 2">
+      <p style="text-align: center; margin-top: 10px;">Você pode ser o próximo a mudar de vida.</p>
+    </section>
+
+    <section class="comentarios-falsos">
+      <h2>Comentários dos leitores:</h2>
+      <div class="comentario"><strong>Rafael M.:</strong> Eu estava sem rumo, esse livro foi um divisor de águas na minha vida!</div>
+      <div class="comentario"><strong>Sandra L.:</strong> As estratégias são simples e fáceis de aplicar. Em poucos dias vi resultado.</div>
+      <div class="comentario"><strong>Tiago V.:</strong> Valeu cada centavo! Nunca imaginei que daria tão certo assim.</div>
+      <div class="comentario"><strong>Bruna K.:</strong> Recomendo demais! Prático, direto ao ponto e transformador.</div>
+      <div class="comentario"><strong>Eduardo F.:</strong> Já li muito sobre finanças, mas esse livro abriu minha mente de verdade.</div>
+    </section>
+
+    <div class="highlight-callout">
+      <h2>🎁 Bônus Exclusivo</h2>
+      <p>Comprando hoje, você recebe gratuitamente meu modelo de planilha para controle diário de ganhos + acesso a um grupo VIP no WhatsApp com novas estratégias.</p>
     </div>
 
-    <div class="selo-urgente">🔥 ÚLTIMAS UNIDADES DISPONÍVEIS!</div>
-
-    <div id="oferta-timer" class="timer-oferta">
-      ⏳ Oferta válida por: <span id="tempo-oferta">4:00</span>
+    <div class="highlight-callout">
+      <h2>🔒 Garantia Incondicional de 7 Dias</h2>
+      <p>Se não gostar, você pode pedir reembolso total. Sem perguntas. Sem risco.</p>
     </div>
 
-    <button id="botao-compra" class="cta-button" onclick="window.location.href='https://pay.hotmart.com/K101107694A'">
-      Adquirir Agora por 24,90€
-    </button>
+    <section class="faq">
+      <h2>Perguntas Frequentes</h2>
+      <div class="faq-item">
+        <h4>Funciona mesmo?</h4>
+        <p>Sim. É o exato passo a passo que eu apliquei. Funciona se for seguido.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Preciso investir dinheiro?</h4>
+        <p>Não. Você pode aplicar com pouco ou quase nada. E pode começar vendendo seu próprio conhecimento também.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Como recebo o livro?</h4>
+        <p>Você recebe um link no seu e-mail assim que a compra for aprovada. Simples e rápido.</p>
+      </div>
+    </section>
 
-    <div id="urgencia-msg" class="urgencia-popup">
-      ⚠️ Oferta especial termina em poucos minutos — garanta o seu agora!
-    </div>
-
-    <div class="comentarios-falsos">
-      <h2>Comentários recentes:</h2>
-      <div class="comentario"><strong>Carla P.:</strong> Comprei ontem e já comecei a aplicar! Top demais 👏</div>
-      <div class="comentario"><strong>João L.:</strong> Nunca imaginei que dava pra ganhar com isso, parabéns!</div>
-      <div class="comentario"><strong>Aline R.:</strong> Investimento mais barato e mais certeiro que já fiz 💰</div>
+    <div class="highlight-callout">
+      <h2>⚠️ Últimos exemplares com bônus</h2>
+      <p>Garanta o seu agora antes do preço aumentar. A decisão que você toma hoje define o seu mês.</p>
+      <button class="cta-button" onclick="window.location.href='https://pay.hotmart.com/K101107694A'">Sim, quero mudar minha vida</button>
     </div>
   </div>
-
-  <script>
-    const video = document.getElementById("meuVideo");
-
-    // Impedir voltar ou repetir o vídeo
-    let ultimoTempo = 0;
-    video.addEventListener("timeupdate", () => {
-      if (video.currentTime < ultimoTempo) {
-        video.currentTime = ultimoTempo;
-      } else {
-        ultimoTempo = video.currentTime;
-      }
-    });
-
-    video.addEventListener("ended", () => {
-      localStorage.setItem("videoAssistido", true);
-      mostrarOferta();
-    });
-
-    function iniciarTimerOferta() {
-      const tempoElemento = document.getElementById("tempo-oferta");
-      let tempoRestante = 4 * 60;
-
-      const intervalo = setInterval(() => {
-        const minutos = Math.floor(tempoRestante / 60);
-        const segundos = tempoRestante % 60;
-        tempoElemento.textContent = `${minutos}:${segundos < 10 ? '0' : ''}${segundos}`;
-
-        if (tempoRestante <= 0) {
-          clearInterval(intervalo);
-          tempoElemento.textContent = "⚠️ Oferta Expirada!";
-          tempoElemento.style.color = "#ff4444";
-        }
-
-        tempoRestante--;
-      }, 1000);
-    }
-
-    function mostrarOferta() {
-      document.getElementById("video-section").style.display = "none";
-      document.getElementById("botao-compra").style.display = "block";
-      document.getElementById("oferta-timer").style.display = "block";
-      iniciarTimerOferta();
-    }
-
-    setTimeout(() => {
-      if (localStorage.getItem("videoAssistido")) {
-        document.getElementById("urgencia-msg").style.display = "block";
-      }
-    }, 30000);
-  </script>
 </body>
 </html>
+
 
 
 
