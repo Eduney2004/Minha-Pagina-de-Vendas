@@ -1,12 +1,10 @@
 
-
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>De 90 Mil Perdidos ao Lucro Diário</title>
+  <title>Dos 90K Perdidos à Volta por Cima</title>
   <style>
     :root {
       --verde: #00ff55;
@@ -25,16 +23,8 @@
     header {
       background-color: var(--verde);
       color: var(--preto);
-      padding: 30px 20px;
+      padding: 20px;
       text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.5em;
-    }
-
-    header p {
-      font-size: 1.2em;
     }
 
     .container {
@@ -45,12 +35,11 @@
       background-color: var(--azul);
       color: #fff;
       padding: 15px 25px;
-      font-size: 20px;
+      font-size: 18px;
       border: none;
-      border-radius: 10px;
+      border-radius: 5px;
       cursor: pointer;
-      margin: 30px auto;
-      display: block;
+      margin-top: 20px;
       animation: pulse 1.5s infinite;
     }
 
@@ -60,44 +49,10 @@
       100% { transform: scale(1); }
     }
 
-    h2 {
-      color: var(--verde);
-    }
+    h2 { color: var(--verde); }
+    h4 { color: var(--azul); }
 
-    h3 {
-      color: var(--azul);
-    }
-
-    .highlight-callout, .faq, .proof-section, .video-section, .testemunhos, .benefits, .para-quem {
-      background-color: #0a0a0a;
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 30px;
-    }
-
-    .benefits ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .benefits li::before {
-      content: "✅ ";
-      color: var(--verde);
-    }
-
-    .testemunhos img {
-      width: 48%;
-      border-radius: 10px;
-      margin: 1%;
-      border: 3px solid var(--verde);
-    }
-
-    .para-quem ul {
-      list-style: square;
-      padding-left: 20px;
-    }
-
-    .contador-visitas, #timer {
+    .contador-visitas {
       background-color: #111;
       padding: 10px;
       color: var(--azul);
@@ -108,134 +63,139 @@
       border-radius: 10px;
     }
 
-    .avaliacoes {
-      text-align: center;
-      margin: 30px 0;
+    .video-section, .proof-section, .benefits, .faq, .testemunhos, .highlight-callout {
+      background-color: #0a0a0a;
+      padding: 20px;
+      margin-top: 30px;
+      border-radius: 10px;
     }
 
-    .avaliacoes p {
-      margin: 5px;
+    .slider-container {
+      width: 100%;
+      max-width: 600px;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 15px;
+      border: 3px solid var(--azul);
     }
 
-    .estrelas::before {
-      content: "★★★★★";
-      color: gold;
-      font-size: 24px;
+    .slider {
+      display: flex;
+      width: 400%;
+      animation: slide 6s infinite;
     }
 
-    #whatsapp-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: white;
-      border: none;
-      padding: 15px 20px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 24px;
-      z-index: 1000;
+    .slider img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    @keyframes slide {
+      0%   { transform: translateX(0); }
+      40%  { transform: translateX(0); }
+      50%  { transform: translateX(-100%); }
+      90%  { transform: translateX(-100%); }
+      100% { transform: translateX(0); }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>De 90 Mil Perdidos ao Lucro Diário</h1>
-    <p>Descubra como virei o jogo usando apenas um celular e acesso à internet</p>
+    <h1>Eu perdi 90 MIL EUROS. E achei que minha vida tinha acabado.</h1>
+    <p style="font-size: 18px; max-width: 800px; margin: auto;">
+      Mas eu virei o jogo. Hoje ganho todos os dias com estratégias simples usando apenas meu celular – e neste livro, conto como qualquer pessoa pode fazer o mesmo.
+    </p>
   </header>
 
   <div class="container">
+    <div style="text-align: center; margin-top: 20px;">
+      <img src="IMG_0993 2.JPG" alt="Foto principal" style="width: 180px; border-radius: 100px; border: 3px solid var(--verde);" />
+      <h2 style="color: var(--verde); margin-top: 20px;">📘 “Dos 90K Perdidos à Volta por Cima”</h2>
+      <p style="font-size: 18px; max-width: 700px; margin: auto;">
+        Um guia direto e real, baseado na minha história, que mostra como sair do fundo do poço e transformar conhecimento em dinheiro com <strong>jogos, e-books e estratégias digitais simples</strong>.
+      </p>
+      <button class="cta-button" onclick="window.location.href='https://pay.hotmart.com/K101107694A'">Quero minha cópia agora</button>
+    </div>
+
     <div class="contador-visitas">
-      👀 <span id="contador">317</span> pessoas estão acessando agora.
+      🔒 <span id="contador">314</span> pessoas acessando agora
     </div>
 
-    <div id="timer">
-      ⏳ Oferta válida por: <span id="tempo">14:00</span>
+    <div style="text-align: center; margin-top: 10px; font-size: 20px; font-weight: bold; color: var(--verde);">
+      ⏳ A oferta com bônus expira em: <span id="timer">4:00</span>
     </div>
-
-    <button class="cta-button" onclick="window.location.href='https://pay.hotmart.com/K101107694A'">QUERO COMEÇAR AGORA</button>
 
     <section class="video-section">
-      <h2>Assista ao vídeo e veja como tudo mudou:</h2>
-      <iframe width="100%" height="315" src="https://www.youtube.com/embed/8M_JSSWb2Js" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <h2>📺 Assista: Meu desabafo real e como você também pode virar o jogo</h2>
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/8M_JSSWb2Js?autoplay=1&loop=0&playlist=8M_JSSWb2Js&rel=0&modestbranding=1&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </section>
 
     <section class="benefits">
-      <h2>Você vai aprender a:</h2>
+      <h2>💡 O que você vai aprender com esse livro:</h2>
       <ul>
-        <li>Faturar com jogos online (Backbu/Casino)</li>
-        <li>Criar e vender e-books mesmo do zero</li>
-        <li>Usar criptomoedas e trading para lucros diários</li>
-        <li>Transformar conhecimento em renda passiva</li>
-      </ul>
-    </section>
-
-    <section class="para-quem">
-      <h2>Este livro é para você que:</h2>
-      <ul>
-        <li>Já perdeu dinheiro e quer se reerguer</li>
-        <li>Deseja uma renda nova e legítima online</li>
-        <li>Está cansado de promessas vazias e quer algo real</li>
-        <li>Quer liberdade para trabalhar de onde quiser</li>
+        <li>✅ Como ganhar dinheiro todos os dias com jogos online (Backbu, Casino, odds e mais)</li>
+        <li>✅ Como criar e vender e-books com inteligência artificial mesmo do zero</li>
+        <li>✅ Como usar criptomoedas e trading simples mesmo com pouco capital</li>
+        <li>✅ Como transformar qualquer conhecimento em uma fonte de renda passiva</li>
+        <li>✅ Como evitar os erros que me fizeram perder 90 mil euros</li>
       </ul>
     </section>
 
     <section class="proof-section">
-      <h2>Meus resultados REAIS</h2>
-      <img src="IMG_0964 2.PNG" alt="Extrato bancário real" width="100%" />
-      <p>Se eu consegui sair do negativo e virar o jogo, você também pode. E tudo começou com este método.</p>
-    </section>
-
-    <section class="avaliacoes">
-      <h2>Leitores satisfeitos</h2>
-      <div class="estrelas"></div>
-      <p>4.9 de 5 - com base em +143 avaliações reais</p>
+      <h2>💸 Resultados Reais: Veja o que conquistei aplicando o que ensino</h2>
+      <p>Não é teoria. São resultados que você também pode ter, mesmo começando do zero.</p>
+      <div class="slider-container">
+        <div class="slider">
+          <img src="IMG_0964 2.PNG" alt="Extrato bancário" />
+          <img src="att.tvlR4nqmuvapJoe3S0RW9Cmvmllj1xgKiPJvkNhydV0 2.JPG" alt="Lucros com jogos" />
+          <img src="att.7D2mA7H5alvrLfzj4gVRvPcACTDZjIU7EPv086Q4iAM.JPG" alt="Prova de resultado" />
+        </div>
+      </div>
+      <h2>📈 Renda com e-books:</h2>
+      <p>Aprenda a criar, lançar e escalar suas vendas digitais.</p>
+      <img src="IMG_1025.jpg" alt="lucros com e-book" width="500">
     </section>
 
     <section class="testemunhos">
-      <h2>Depoimentos reais</h2>
-      <img src="IMG_1020.PNG" alt="Depoimento 1">
-      <img src="IMG_1021.jpg" alt="Depoimento 2">
+      <h2>✨ O que dizem as pessoas que já aplicaram</h2>
+      <div style="text-align: center;">
+        <img src="IMG_1020.PNG" alt="Depoimento 1" style="width: 45%; margin: 10px;">
+        <p style="font-size: 14px;">“Comecei sem nada, hoje já fiz minha primeira venda com e-book. Obrigado pelo empurrão!”</p>
+
+        <img src="IMG_1021.jpg" alt="Depoimento 2" style="width: 45%; margin: 10px;">
+        <p style="font-size: 14px;">“Aplicando o que aprendi no livro, já tirei meu primeiro lucro no Backbu. Nunca tinha conseguido!”</p>
+      </div>
     </section>
 
     <section class="faq">
-      <h2>Perguntas frequentes</h2>
-      <p><strong>Funciona mesmo?</strong><br>Sim! Tudo é baseado em minha jornada real, sem enrolação.</p>
-      <p><strong>Preciso investir dinheiro?</strong><br>Você pode começar com o que tem e evoluir conforme aprende.</p>
-      <p><strong>Como recebo o livro?</strong><br>Após o pagamento, o acesso é imediato por e-mail.</p>
+      <h2>❓ Dúvidas Frequentes</h2>
+      <div class="faq-item">
+        <h4>Funciona mesmo?</h4>
+        <p>Sim. É baseado na minha história real. Não é fórmula mágica, mas um caminho claro e direto para quem quer uma renda nova.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Preciso investir muito?</h4>
+        <p>Não. O livro mostra formas de começar com pouco ou quase nenhum investimento, usando o que você já tem: celular e tempo.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Como recebo o livro?</h4>
+        <p>Assim que o pagamento for confirmado, o link de acesso é enviado direto pro seu e-mail.</p>
+      </div>
     </section>
 
-    <section class="highlight-callout">
-      <h2>💥 Bônus exclusivo</h2>
-      <p>Compre hoje e receba meu modelo pessoal de planilha + acesso a um grupo fechado no WhatsApp para suporte direto.</p>
-    </section>
+    <div class="highlight-callout">
+      <h2>🔥 Bônus Exclusivo de Hoje</h2>
+      <p>Quem comprar hoje recebe meu modelo secreto de e-book + planilha de gestão para jogos — os dois juntos me geram lucro diário.</p>
+    </div>
 
-    <button class="cta-button" onclick="window.location.href='https://pay.hotmart.com/K101107694A'">ADQUIRIR COM BÔNUS</button>
-
+    <div style="text-align: center;">
+      <button class="cta-button" onclick="window.location.href='https://pay.hotmart.com/K101107694A'">Quero agora por 24,90€</button>
+    </div>
   </div>
-
-  <button id="whatsapp-button" onclick="window.location.href='https://wa.me/351965468531'">💬</button>
-
-  <script>
-    function atualizarContador() {
-      let numero = Math.floor(Math.random() * 30) + 301;
-      document.getElementById("contador").textContent = numero;
-    }
-    setInterval(atualizarContador, 3000);
-    atualizarContador();
-
-    let tempo = 14 * 60;
-    const el = document.getElementById("tempo");
-    const interval = setInterval(() => {
-      const min = Math.floor(tempo / 60);
-      const seg = tempo % 60;
-      el.textContent = `${min}:${seg < 10 ? '0' : ''}${seg}`;
-      if (tempo <= 0) clearInterval(interval);
-      tempo--;
-    }, 1000);
-  </script>
 </body>
 </html>
+
 
 
 
