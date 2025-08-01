@@ -171,14 +171,12 @@
   </style>
 </head>
 <body>
-
   <header>
     <h1>Dos 90K Perdidos à Volta por Cima</h1>
     <p>Descubra como transformar perdas em lucros REAIS com jogos, trading e e-books</p>
   </header>
 
   <div class="container">
-
     <div class="topo-imagens">
       <img src="IMG_1026.JPG" alt="Imagem esquerda">
       <img src="IMG_0993 2.JPG" alt="Foto principal">
@@ -196,7 +194,7 @@
     <section class="video-section">
       <h2>Assista ao vídeo e entenda por que este livro pode mudar sua vida:</h2>
       <iframe width="100%" height="315"
-        src="https://www.youtube.com/embed/8M_JSSWb2Js?autoplay=1&loop=0&playlist=8M_JSSWb2Js&rel=0&modestbranding=1&controls=1"
+        src="https://www.youtube.com/embed/8M_JSSWb2Js?autoplay=1&loop=0&playlist=8M_JSSWb2Js&rel=0&modestbranding=1&controls=0"
         frameborder="0"
         allow="autoplay; encrypted-media"
         allowfullscreen>
@@ -260,6 +258,15 @@
 
     <button class="cta-button" onclick="window.location.href='https://pay.hotmart.com/K101107694A'">Adquirir Agora por 24,90€</button>
 
+    <div class="highlight-callout">
+      <h2>🎯 Bônus Limitado</h2>
+      <p>Quem comprar hoje ainda recebe meu modelo secreto que uso para faturar todos os dias com jogos e e-books!</p>
+    </div>
+
+    <div id="popup-urgencia" style="display:none; position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%);
+    background-color: #111; color: var(--verde); padding: 20px; border: 2px solid var(--azul); border-radius: 10px; z-index: 999;">
+      ⏰ Mais de <strong><span id="numero-popup">317</span></strong> pessoas estão acessando agora... garanta o seu antes que acabe!
+    </div>
   </div>
 
   <button id="whatsapp-button" onclick="window.location.href='https://wa.me/351965468531'">💬</button>
@@ -268,6 +275,7 @@
     function atualizarContador() {
       let numero = Math.floor(Math.random() * 30) + 301;
       document.getElementById("contador").textContent = numero;
+      document.getElementById("numero-popup").textContent = numero + Math.floor(Math.random() * 10);
     }
     setInterval(atualizarContador, 2000);
     atualizarContador();
@@ -288,10 +296,14 @@
 
       tempoRestante--;
     }, 1000);
-  </script>
 
+    setTimeout(() => {
+      document.getElementById('popup-urgencia').style.display = 'block';
+    }, 15000);
+  </script>
 </body>
 </html>
+
 
 
 
