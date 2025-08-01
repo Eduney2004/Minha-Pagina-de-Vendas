@@ -28,9 +28,15 @@
     }
 
     header h1 {
-      font-size: 32px;
+      font-size: 34px;
       color: var(--verde);
       animation: fadeInDown 1s ease;
+    }
+
+    header p.subtitulo {
+      font-size: 18px;
+      margin: 15px 0;
+      color: #ccc;
     }
 
     .cta-button {
@@ -163,10 +169,19 @@
 
     .urgencia {
       text-align: center;
-      font-size: 20px;
-      color: var(--verde);
+      font-size: 22px;
+      color: #ff4444;
       margin-top: 20px;
+      font-weight: bold;
       animation: pulse 2s infinite;
+    }
+
+    .contador {
+      text-align: center;
+      font-size: 26px;
+      color: #ff4444;
+      margin-top: 10px;
+      font-weight: bold;
     }
 
     @media (max-width: 768px) {
@@ -183,82 +198,97 @@
 </head>
 <body>
   <header>
-    <h1>"Perdi 90 MIL EUROS. Achei que minha vida tinha acabado..."</h1>
-    <p>Mas eu dei a volta por cima. Com meu celular, acesso à internet e estratégias simples com jogos online e e-books, comecei a faturar diariamente. Neste livro, eu te conto tudo, sem enrolação.</p>
+    <h1>💥 Perdi 90 MIL EUROS... e achei que era o fim. Mas foi só o começo.</h1>
+    <p class="subtitulo">Descubra como transformar perdas em lucro usando apenas seu celular, internet e estratégias simples. Este livro revela tudo.</p>
     <img src="IMG_0993 2.JPG" alt="Foto autor" style="width: 150px; border-radius: 100px; border: 3px solid #00ff55; margin-top: 20px;">
   </header>
 
   <div class="video-section container">
     <h2>Assista ao vídeo:</h2>
     <video id="meuVideo" width="100%" height="315" autoplay muted playsinline controlslist="nodownload nofullscreen noremoteplayback" disablepictureinpicture>
-      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      <source src="video_livro.mp4" type="video/mp4">
       Seu navegador não suporta vídeo HTML5.
     </video>
     <div id="video-button">
       <button class="cta-button" onclick="window.location.href='https://pay.hotmart.com/K101107694A'">Quero meu acesso por 24,90€</button>
     </div>
-    <div class="urgencia">⚠️ Oferta válida por tempo limitado. Aproveite enquanto o vídeo roda!</div>
+    <div class="urgencia">⏳ Oferta expira em breve! Aproveite antes que acabe!</div>
+    <div class="contador" id="contador">10:00</div>
   </div>
 
-  <!-- Conteúdo reaparecendo após vídeo -->
-  <div class="container" id="conteudoExtra" style="display: none;">
-    <section class="benefits">
-      <h2>O que você vai aprender no livro:</h2>
-      <ul>
-        <li>✔️ Como gerar lucro real com jogos online</li>
-        <li>✔️ Como vender e-books mesmo começando do zero</li>
-        <li>✔️ Estratégias com criptomoedas e trading</li>
-        <li>✔️ Criar renda passiva com seu conhecimento</li>
-        <li>✔️ Mentalidade para sair do fundo do poço</li>
-      </ul>
-    </section>
-
-    <section class="proof-section">
-      <h2>Resultados REAIS:</h2>
+  <div class="container" id="conteudoExtra">
+    <div class="proof-section">
+      <h2>Comprovantes Reais</h2>
       <div class="slider-container">
         <div class="slider">
-          <img src="IMG_0964 2.PNG" alt="Extrato bancário" />
-          <img src="att.tvlR4nqmuvapJoe3S0RW9Cmvmllj1xgKiPJvkNhydV0 2.JPG" alt="Imagem 2" />
-          <img src="att.7D2mA7H5alvrLfzj4gVRvPcACTDZjIU7EPv086Q4iAM.JPG" alt="Imagem 3" />
+          <img src="comprovante1.jpg" alt="Prova 1">
+          <img src="comprovante2.jpg" alt="Prova 2">
+          <img src="comprovante3.jpg" alt="Prova 3">
         </div>
       </div>
-    </section>
+    </div>
 
-    <section class="testemunhos">
-      <h2>O que estão dizendo:</h2>
-      <img src="IMG_1020.PNG" alt="Depoimento 1">
-      <img src="IMG_1021.jpg" alt="Depoimento 2">
-      <p style="text-align: center; margin-top: 10px;">Você pode ser o próximo a mudar de vida.</p>
-    </section>
-
-    <div class="highlight-callout">
-      <h2>🎁 Bônus Exclusivo</h2>
-      <p>Você recebe gratuitamente uma planilha de controle + grupo VIP no WhatsApp.</p>
+    <div class="testemunhos">
+      <img src="depoimento1.jpg" alt="Depoimento 1">
+      <img src="depoimento2.jpg" alt="Depoimento 2">
+      <img src="depoimento3.jpg" alt="Depoimento 3">
     </div>
 
     <div class="garantia-secao">
-      <h2>🔒 Garantia Incondicional de 7 Dias</h2>
-      <p>Se não gostar, você pode pedir reembolso total. Sem perguntas. Sem risco.</p>
+      <h2>Garantia Incondicional de 7 Dias</h2>
+      <p>Você tem 7 dias para experimentar sem risco. Se não gostar, devolvemos 100% do seu dinheiro sem perguntas.</p>
+    </div>
+
+    <div class="sobre-autor">
+      <h2>Sobre o Autor</h2>
+      <p>Meu nome é [Seu Nome], e depois de perder mais de 90 mil euros, consegui dar a volta por cima. Hoje ajudo pessoas a fazerem o mesmo através de conhecimento prático, direto e sem enrolação.</p>
+    </div>
+
+    <div class="comentarios-falsos">
+      <h2>Comentários Recentes</h2>
+      <div class="comentario"><strong>Ana P.:</strong> Comecei ontem e já entendi muita coisa. Obrigada por compartilhar!</div>
+      <div class="comentario"><strong>Luiz M.:</strong> Sério, esse livro vale muito mais que 24 euros. Parabéns!</div>
+      <div class="comentario"><strong>Carla S.:</strong> Assisti o vídeo e comprei na hora. Faz todo sentido!</div>
     </div>
   </div>
 
   <script>
     const video = document.getElementById('meuVideo');
-    const btn = document.getElementById('video-button');
-    const extra = document.getElementById('conteudoExtra');
+    const botao = document.getElementById('video-button');
+    const contador = document.getElementById('contador');
 
-    video.addEventListener('timeupdate', () => {
-      if (video.currentTime < (video.lastTime || 0)) {
-        video.currentTime = video.lastTime;
+    let intervaloContador;
+    let tempoRestante = 600;
+
+    function iniciarContador() {
+      intervaloContador = setInterval(() => {
+        if (tempoRestante <= 0) {
+          clearInterval(intervaloContador);
+          contador.textContent = "00:00";
+          return;
+        }
+        tempoRestante--;
+        const minutos = Math.floor(tempoRestante / 60).toString().padStart(2, '0');
+        const segundos = (tempoRestante % 60).toString().padStart(2, '0');
+        contador.textContent = `${minutos}:${segundos}`;
+      }, 1000);
+    }
+
+    let exibiuBotao = false;
+
+    function mostrarBotao() {
+      if (!exibiuBotao) {
+        botao.style.display = 'block';
+        exibiuBotao = true;
       }
-      video.lastTime = video.currentTime;
+    }
+
+    video.addEventListener('play', () => {
+      iniciarContador();
+      setTimeout(mostrarBotao, 90000);
     });
 
-    video.addEventListener('ended', () => {
-      btn.style.display = 'block';
-      extra.style.display = 'block';
-      video.controls = false;
-    });
+    video.addEventListener('ended', mostrarBotao);
   </script>
 </body>
 </html>
