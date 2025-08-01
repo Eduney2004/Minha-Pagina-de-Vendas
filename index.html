@@ -127,6 +127,12 @@
     .comentario strong {
       color: var(--verde);
     }
+
+    #video-button {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
@@ -140,10 +146,10 @@
   <div class="container">
     <section class="video-section">
       <h2>Assista meu desabafo e veja como você também pode mudar sua vida:</h2>
-      <iframe width="100%" height="315"
-        src="https://www.youtube.com/embed/8M_JSSWb2Js?autoplay=1&loop=0&playlist=8M_JSSWb2Js&rel=0&modestbranding=1&controls=0"
-        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-      </iframe>
+      <div id="player"></div>
+      <div id="video-button">
+        <button class="cta-button" onclick="window.location.href='https://pay.hotmart.com/K101107694A'">Liberar meu acesso agora</button>
+      </div>
     </section>
 
     <section class="benefits">
@@ -217,8 +223,51 @@
       <button class="cta-button" onclick="window.location.href='https://pay.hotmart.com/K101107694A'">Sim, quero mudar minha vida</button>
     </div>
   </div>
+
+  <script>
+    let player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        height: '315',
+        width: '100%',
+        videoId: '8M_JSSWb2Js',
+        playerVars: {
+          'rel': 0,
+          'modestbranding': 1,
+          'controls': 0,
+          'loop': 0,
+          'autoplay': 0
+        },
+        events: {
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+
+    function onPlayerStateChange(event) {
+      if (event.data === YT.PlayerState.ENDED) {
+        document.getElementById('video-button').style.display = 'block';
+
+        const urgencyBanner = document.createElement('div');
+        urgencyBanner.innerText = '🚨 Atenção: oferta especial liberada por tempo limitado!';
+        urgencyBanner.style.background = 'red';
+        urgencyBanner.style.color = 'white';
+        urgencyBanner.style.padding = '15px';
+        urgencyBanner.style.textAlign = 'center';
+        urgencyBanner.style.fontSize = '20px';
+        urgencyBanner.style.marginTop = '20px';
+        urgencyBanner.style.fontWeight = 'bold';
+        document.querySelector('.video-section').appendChild(urgencyBanner);
+
+        alert("🚨 Oferta liberada! Clique no botão abaixo para garantir seu acesso.");
+        document.getElementById('video-button').scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
+  <script src="https://www.youtube.com/iframe_api"></script>
 </body>
 </html>
+
 
 
 
