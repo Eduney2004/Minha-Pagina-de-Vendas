@@ -124,7 +124,6 @@
       z-index: 1000;
     }
 
-    /* Carrossel */
     .slider-container {
       width: 100%;
       max-width: 600px;
@@ -153,17 +152,31 @@
       90%  { transform: translateX(-100%); }
       100% { transform: translateX(0); }
     }
+
+    .testemunhos {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .testemunhos img {
+      width: 45%;
+      height: 300px;
+      object-fit: cover;
+      border: 3px solid var(--verde);
+      border-radius: 10px;
+    }
   </style>
 </head>
 <body>
-
   <header>
     <h1>Dos 90K Perdidos à Volta por Cima</h1>
     <p>Descubra como transformar perdas em lucros REAIS com jogos, trading e e-books</p>
   </header>
 
   <div class="container">
-
     <div class="topo-imagens">
       <img src="IMG_1026.JPG" alt="Imagem esquerda">
       <img src="IMG_0993 2.JPG" alt="Foto principal">
@@ -180,7 +193,12 @@
 
     <section class="video-section">
       <h2>Assista ao vídeo e entenda por que este livro pode mudar sua vida:</h2>
-      <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_AQUI" frameborder="0" allowfullscreen></iframe>
+      <iframe width="100%" height="315"
+        src="https://www.youtube.com/embed/8M_JSSWb2Js?autoplay=1&loop=0&playlist=8M_JSSWb2Js&rel=0&modestbranding=1&controls=0"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+      </iframe>
     </section>
 
     <section class="benefits">
@@ -201,14 +219,8 @@
         <div class="slider">
           <img src="IMG_0964 2.PNG" alt="Extrato bancário" />
           <img src="att.tvlR4nqmuvapJoe3S0RW9Cmvmllj1xgKiPJvkNhydV0 2.JPG" alt="Imagem adicional" />
-          <img src="att.tvlR4nqmuvapJoe3S0RW9Cmvmllj1xgKiPJvkNhydV0 2.JPG" alt="Imagem adicional" />
-          <img src="att.tvlR4nqmuvapJoe3S0RW9Cmvmllj1xgKiPJvkNhydV0 2.JPG" alt="Imagem adicional" />
           <img src="att.7D2mA7H5alvrLfzj4gVRvPcACTDZjIU7EPv086Q4iAM.JPG" alt="Imagem adicional" />
           <img src="IMG_0964 2.PNG" alt="Extrato bancário" />
-          <img src="att.tvlR4nqmuvapJoe3S0RW9Cmvmllj1xgKiPJvkNhydV0 2.JPG" alt="Imagem adicional" />
-          <img src="att.tvlR4nqmuvapJoe3S0RW9Cmvmllj1xgKiPJvkNhydV0 2.JPG" alt="Imagem adicional" />
-          <img src="att.tvlR4nqmuvapJoe3S0RW9Cmvmllj1xgKiPJvkNhydV0 2.JPG" alt="Imagem adicional" />
-          <img src="att.7D2mA7H5alvrLfzj4gVRvPcACTDZjIU7EPv086Q4iAM.JPG" alt="Imagem adicional" />
         </div>
       </div>
 
@@ -217,14 +229,12 @@
       <img src="IMG_1025.jpg" alt="foto principal" width="500">
     </section>
 
-   <section class="testemunhos">
-  <h2>Depoimentos de quem já comprou</h2>
-  <div class="depoimentos-container">
-    <img src="IMG_1020.PNG" alt="Depoimento 1">
-    <img src="IMG_1021.jpg" alt="Depoimento 2">
-  </div>
-</section>
-    
+    <section class="testemunhos">
+      <h2>Depoimentos de quem já comprou</h2>
+      <img src="IMG_1020.PNG" alt="Depoimento 1">
+      <img src="IMG_1021.jpg" alt="Depoimento 2">
+    </section>
+
     <section class="faq">
       <h2>Dúvidas Frequentes</h2>
       <div class="faq-item">
@@ -246,10 +256,53 @@
       <p>Já são centenas de pessoas mudando de vida. Agora é sua vez. Adquira o livro e comece hoje a sua transformação.</p>
     </div>
 
-    <button class="cta-button" onclick="window.location.href='https://SEULINKDECOMPRA.com'">Adquirir Agora por 24,90€</button>
+    <button class="cta-button" onclick="window.location.href='https://pay.hotmart.com/K101107694A'">Adquirir Agora por 24,90€</button>
 
+    <div class="highlight-callout">
+      <h2>🎯 Bônus Limitado</h2>
+      <p>Quem comprar hoje ainda recebe meu modelo secreto que uso para faturar todos os dias com jogos e e-books!</p>
+    </div>
+
+    <div id="popup-urgencia" style="display:none; position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%);
+    background-color: #111; color: var(--verde); padding: 20px; border: 2px solid var(--azul); border-radius: 10px; z-index: 999;">
+      ⏰ Mais de <strong><span id="numero-popup">317</span></strong> pessoas estão acessando agora... garanta o seu antes que acabe!
+    </div>
   </div>
 
+  <button id="whatsapp-button" onclick="window.location.href='https://wa.me/351965468531'">💬</button>
+
+  <script>
+    function atualizarContador() {
+      let numero = Math.floor(Math.random() * 30) + 301;
+      document.getElementById("contador").textContent = numero;
+      document.getElementById("numero-popup").textContent = numero + Math.floor(Math.random() * 10);
+    }
+    setInterval(atualizarContador, 2000);
+    atualizarContador();
+
+    let tempoRestante = 14 * 60;
+    const tempoElemento = document.getElementById("timer");
+
+    const timerInterval = setInterval(() => {
+      const minutos = Math.floor(tempoRestante / 60);
+      const segundos = tempoRestante % 60;
+
+      tempoElemento.textContent = `${minutos}:${segundos < 10 ? '0' : ''}${segundos}`;
+
+      if (tempoRestante <= 0) {
+        clearInterval(timerInterval);
+        tempoElemento.textContent = "⚠️ Tempo esgotado!";
+      }
+
+      tempoRestante--;
+    }, 1000);
+
+    setTimeout(() => {
+      document.getElementById('popup-urgencia').style.display = 'block';
+    }, 15000);
+  </script>
+</body>
+</html>
 
 
 
