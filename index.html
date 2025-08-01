@@ -20,29 +20,15 @@
     }
 
     header {
-      background-color: var(--verde);
-      color: var(--preto);
-      padding: 20px;
+      background-color: #111;
+      padding: 40px 20px;
       text-align: center;
+      color: #fff;
     }
 
-    .container {
-      padding: 20px;
-    }
-
-    .topo-imagens {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .topo-imagens img {
-      width: 33.3%;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 10px;
-      border: 2px solid var(--azul);
+    header h1 {
+      font-size: 32px;
+      color: var(--verde);
     }
 
     .cta-button {
@@ -63,11 +49,8 @@
       100% { transform: scale(1); }
     }
 
-    .video-section, .testemunhos, .faq, .proof-section {
-      margin: 40px 0;
-      background-color: #0a0a0a;
+    .container {
       padding: 20px;
-      border-radius: 10px;
     }
 
     h2 {
@@ -78,50 +61,11 @@
       color: var(--azul);
     }
 
-    .faq-item {
-      margin-bottom: 20px;
-    }
-
-    .proof-section img {
-      border: 3px solid var(--verde);
-      border-radius: 15px;
-      margin: 10px auto;
-      display: block;
-      max-width: 95%;
-    }
-
-    .highlight-callout {
-      background-color: var(--azul);
-      color: #000;
+    .video-section, .benefits, .proof-section, .testemunhos, .faq, .highlight-callout {
+      margin: 40px 0;
+      background-color: #0a0a0a;
       padding: 20px;
-      border-left: 5px solid var(--verde);
-      margin: 30px 0;
       border-radius: 10px;
-    }
-
-    .contador-visitas {
-      background-color: #111;
-      padding: 10px;
-      color: var(--azul);
-      text-align: center;
-      font-size: 18px;
-      font-weight: bold;
-      margin: 20px 0;
-      border-radius: 10px;
-    }
-
-    #whatsapp-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: white;
-      border: none;
-      padding: 15px 20px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 24px;
-      z-index: 1000;
     }
 
     .slider-container {
@@ -135,7 +79,7 @@
 
     .slider {
       display: flex;
-      width: 200%;
+      width: 300%;
       animation: slide 6s infinite;
     }
 
@@ -146,11 +90,9 @@
     }
 
     @keyframes slide {
-      0%   { transform: translateX(0); }
-      40%  { transform: translateX(0); }
-      50%  { transform: translateX(-100%); }
-      90%  { transform: translateX(-100%); }
-      100% { transform: translateX(0); }
+      0%, 40%   { transform: translateX(0); }
+      50%, 90%  { transform: translateX(-100%); }
+      100%      { transform: translateX(0); }
     }
 
     .testemunhos {
@@ -158,7 +100,6 @@
       justify-content: center;
       gap: 15px;
       flex-wrap: wrap;
-      margin-top: 20px;
     }
 
     .testemunhos img {
@@ -168,141 +109,98 @@
       border: 3px solid var(--verde);
       border-radius: 10px;
     }
+
+    .highlight-callout {
+      background-color: var(--azul);
+      color: #000;
+      padding: 20px;
+      border-left: 5px solid var(--verde);
+      border-radius: 10px;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Dos 90K Perdidos à Volta por Cima</h1>
-    <p>Descubra como transformar perdas em lucros REAIS com jogos, trading e e-books</p>
+    <h1>"Perdi 90 MIL EUROS. Achei que minha vida tinha acabado..."</h1>
+    <p>Mas eu dei a volta por cima. Com meu celular, acesso à internet e estratégias simples com jogos online e e-books, comecei a faturar diariamente. Neste livro, eu te conto tudo, sem enrolação.</p>
+    <img src="IMG_0993 2.JPG" alt="Foto autor" style="width: 150px; border-radius: 100px; border: 3px solid #00ff55; margin-top: 20px;">
+    <button class="cta-button" onclick="window.location.href='https://pay.hotmart.com/K101107694A'">Quero meu acesso por 24,90€</button>
   </header>
 
   <div class="container">
-    <div class="topo-imagens">
-      <img src="IMG_1026.JPG" alt="Imagem esquerda">
-      <img src="IMG_0993 2.JPG" alt="Foto principal">
-      <img src="IMG_1027.JPG" alt="Imagem direita">
-    </div>
-
-    <div class="contador-visitas">
-      🔒 <span id="contador">310</span> pessoas estão visualizando esta página agora e adquirindo o livro!
-    </div>
-
-    <div style="text-align: center; margin-top: 10px; font-size: 20px; font-weight: bold; color: var(--verde);">
-      ⏳ Oferta válida por: <span id="timer">4:00</span>
-    </div>
-
     <section class="video-section">
-      <h2>Assista ao vídeo e entenda por que este livro pode mudar sua vida:</h2>
+      <h2>Assista meu desabafo e veja como você também pode mudar sua vida:</h2>
       <iframe width="100%" height="315"
         src="https://www.youtube.com/embed/8M_JSSWb2Js?autoplay=1&loop=0&playlist=8M_JSSWb2Js&rel=0&modestbranding=1&controls=0"
-        frameborder="0"
-        allow="autoplay; encrypted-media"
-        allowfullscreen>
+        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
       </iframe>
     </section>
 
     <section class="benefits">
-      <h2>O que você vai aprender:</h2>
-      <ul>
-        <li>Como ganhar dinheiro com jogos online (Backbu/Casino)</li>
-        <li>Como criar e vender e-books mesmo do zero</li>
-        <li>Como usar criptomoedas e trading para gerar lucros diários</li>
-        <li>Como transformar conhecimento em renda passiva</li>
+      <h2>O que você vai aprender no livro:</h2>
+      <ul style="font-size: 18px;">
+        <li>✔️ Como gerar lucro real com jogos online (Backbu e Cassino)</li>
+        <li>✔️ Como vender e-books mesmo começando do zero</li>
+        <li>✔️ Estratégias para ganhar com criptomoedas e trading simples</li>
+        <li>✔️ Como criar renda passiva com seu conhecimento</li>
+        <li>✔️ A mentalidade que me tirou do buraco e pode te tirar também</li>
       </ul>
+      <button class="cta-button" onclick="window.location.href='https://pay.hotmart.com/K101107694A'">Quero aprender agora</button>
     </section>
 
     <section class="proof-section">
-      <h2>Veja os resultados REAIS que eu obtive com jogos:</h2>
-      <p>Se você quer ter resultados como estes, adquira agora o livro e siga o passo a passo!</p>
-
+      <h2>Resultados REAIS que tive aplicando o que ensino:</h2>
       <div class="slider-container">
         <div class="slider">
           <img src="IMG_0964 2.PNG" alt="Extrato bancário" />
-          <img src="att.tvlR4nqmuvapJoe3S0RW9Cmvmllj1xgKiPJvkNhydV0 2.JPG" alt="Imagem adicional" />
-          <img src="att.7D2mA7H5alvrLfzj4gVRvPcACTDZjIU7EPv086Q4iAM.JPG" alt="Imagem adicional" />
-          <img src="IMG_0964 2.PNG" alt="Extrato bancário" />
+          <img src="att.tvlR4nqmuvapJoe3S0RW9Cmvmllj1xgKiPJvkNhydV0 2.JPG" alt="Imagem 2" />
+          <img src="att.7D2mA7H5alvrLfzj4gVRvPcACTDZjIU7EPv086Q4iAM.JPG" alt="Imagem 3" />
         </div>
       </div>
-
-      <h2>Veja os ganhos com a venda de e-books:</h2>
-      <p>Você também pode transformar suas histórias em lucro!</p>
-      <img src="IMG_1025.jpg" alt="foto principal" width="500">
     </section>
 
     <section class="testemunhos">
-      <h2>Depoimentos de quem já comprou</h2>
+      <h2>O que estão dizendo:</h2>
       <img src="IMG_1020.PNG" alt="Depoimento 1">
       <img src="IMG_1021.jpg" alt="Depoimento 2">
+      <p style="text-align: center; margin-top: 10px;">Você pode ser o próximo a mudar de vida.</p>
     </section>
+
+    <div class="highlight-callout">
+      <h2>🎁 Bônus Exclusivo</h2>
+      <p>Comprando hoje, você recebe gratuitamente meu modelo de planilha para controle diário de ganhos + acesso a um grupo VIP no WhatsApp com novas estratégias.</p>
+    </div>
+
+    <div class="highlight-callout">
+      <h2>🔒 Garantia Incondicional de 7 Dias</h2>
+      <p>Se não gostar, você pode pedir reembolso total. Sem perguntas. Sem risco.</p>
+    </div>
 
     <section class="faq">
-      <h2>Dúvidas Frequentes</h2>
+      <h2>Perguntas Frequentes</h2>
       <div class="faq-item">
-        <h4>Esse método funciona mesmo?</h4>
-        <p>Sim! Este livro é baseado em experiências reais e comprovadas.</p>
+        <h4>Funciona mesmo?</h4>
+        <p>Sim. É o exato passo a passo que eu apliquei. Funciona se for seguido.</p>
       </div>
       <div class="faq-item">
-        <h4>Preciso investir dinheiro para começar?</h4>
-        <p>Você pode começar com o que tem. O livro ensina diferentes formas de começar sem grandes investimentos.</p>
+        <h4>Preciso investir dinheiro?</h4>
+        <p>Não. Você pode aplicar com pouco ou quase nada. E pode começar vendendo seu próprio conhecimento também.</p>
       </div>
       <div class="faq-item">
-        <h4>Depois da compra, como recebo o livro?</h4>
-        <p>Após o pagamento, o acesso será imediato via e-mail.</p>
+        <h4>Como recebo o livro?</h4>
+        <p>Você recebe um link no seu e-mail assim que a compra for aprovada. Simples e rápido.</p>
       </div>
     </section>
 
     <div class="highlight-callout">
-      <h2>Não perca mais tempo!</h2>
-      <p>Já são centenas de pessoas mudando de vida. Agora é sua vez. Adquira o livro e comece hoje a sua transformação.</p>
-    </div>
-
-    <button class="cta-button" onclick="window.location.href='https://pay.hotmart.com/K101107694A'">Adquirir Agora por 24,90€</button>
-
-    <div class="highlight-callout">
-      <h2>🎯 Bônus Limitado</h2>
-      <p>Quem comprar hoje ainda recebe meu modelo secreto que uso para faturar todos os dias com jogos e e-books!</p>
-    </div>
-
-    <div id="popup-urgencia" style="display:none; position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%);
-    background-color: #111; color: var(--verde); padding: 20px; border: 2px solid var(--azul); border-radius: 10px; z-index: 999;">
-      ⏰ Mais de <strong><span id="numero-popup">317</span></strong> pessoas estão acessando agora... garanta o seu antes que acabe!
+      <h2>⚠️ Últimos exemplares com bônus</h2>
+      <p>Garanta o seu agora antes do preço aumentar. A decisão que você toma hoje define o seu mês.</p>
+      <button class="cta-button" onclick="window.location.href='https://pay.hotmart.com/K101107694A'">Sim, quero mudar minha vida</button>
     </div>
   </div>
-
-  <button id="whatsapp-button" onclick="window.location.href='https://wa.me/351965468531'">💬</button>
-
-  <script>
-    function atualizarContador() {
-      let numero = Math.floor(Math.random() * 30) + 301;
-      document.getElementById("contador").textContent = numero;
-      document.getElementById("numero-popup").textContent = numero + Math.floor(Math.random() * 10);
-    }
-    setInterval(atualizarContador, 2000);
-    atualizarContador();
-
-    let tempoRestante = 14 * 60;
-    const tempoElemento = document.getElementById("timer");
-
-    const timerInterval = setInterval(() => {
-      const minutos = Math.floor(tempoRestante / 60);
-      const segundos = tempoRestante % 60;
-
-      tempoElemento.textContent = `${minutos}:${segundos < 10 ? '0' : ''}${segundos}`;
-
-      if (tempoRestante <= 0) {
-        clearInterval(timerInterval);
-        tempoElemento.textContent = "⚠️ Tempo esgotado!";
-      }
-
-      tempoRestante--;
-    }, 1000);
-
-    setTimeout(() => {
-      document.getElementById('popup-urgencia').style.display = 'block';
-    }, 15000);
-  </script>
 </body>
 </html>
+
 
 
 
