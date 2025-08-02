@@ -12,6 +12,114 @@
       --azul: #00bfff;
       --preto: #000000;
     }
+<!-- Boas-vindas com fogos de artifício -->
+<div id="welcome-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); color: white; display: flex; align-items: center; justify-content: center; flex-direction: column; z-index: 9999; text-align: center;">
+  <h1 style="font-size: 2.5em; color: #00ff55;">🎆 Bem-vindo! 🎆</h1>
+  <p style="font-size: 1.2em; color: #00bfff;">O seu "eu" do futuro te agradecerá depois!</p>
+  <canvas id="fireworks-canvas" style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none;"></canvas>
+</div>
+
+<script>
+  // Ajusta tamanho do canvas
+  const canvas = document.getElementById("fireworks-canvas");
+  const ctx = canvas.getContext("2d");
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  class Firework {
+    constructor() {
+      this.x = Math.random() * canvas.width;
+      this.y = canvas.height;
+      this.targetY = Math.random() * canvas.height / 2;
+      this.color = `hsl(${Math.random() * 360}, 100%, 50%)`;
+      this.size = 2;
+      this.velocityY = -Math.random() * 4 - 4;
+      this.exploded = false;
+      this.particles = [];
+    }
+
+    update() {
+      if (!this.exploded) {
+        this.y += this.velocityY;
+        if (this.y <= this.targetY) {
+          this.exploded = true;
+          for (let i = 0; i < 30; i++) {
+            this.particles.push(new Particle(this.x, this.y, this.color));
+          }
+        }
+      } else {
+        this.particles.forEach(p => p.update());
+      }
+    }
+
+    draw() {
+      if (!this.exploded) {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+      } else {
+        this.particles.forEach(p => p.draw());
+      }
+    }
+  }
+
+  class Particle {
+    constructor(x, y, color) {
+      this.x = x;
+      this.y = y;
+      this.radius = Math.random() * 2 + 1;
+      this.color = color;
+      this.velocityX = Math.random() * 6 - 3;
+      this.velocityY = Math.random() * 6 - 3;
+      this.alpha = 1;
+    }
+
+    update() {
+      this.x += this.velocityX;
+      this.y += this.velocityY;
+      this.alpha -= 0.02;
+    }
+
+    draw() {
+      ctx.globalAlpha = this.alpha;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      ctx.fillStyle = this.color;
+      ctx.fill();
+      ctx.globalAlpha = 1;
+    }
+  }
+
+  const fireworks = [];
+
+  function animateFireworks() {
+    ctx.fillStyle = "rgba(0,0,0,0.2)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    if (Math.random() < 0.08) fireworks.push(new Firework());
+
+    fireworks.forEach((f, i) => {
+      f.update();
+      f.draw();
+      if (f.exploded && f.particles.every(p => p.alpha <= 0)) {
+        fireworks.splice(i, 1);
+      }
+    });
+
+    requestAnimationFrame(animateFireworks);
+  }
+
+  animateFireworks();
+
+  // Remove a sobreposição após 3 segundos
+  setTimeout(() => {
+    const overlay = document.getElementById('welcome-overlay');
+    overlay.style.transition = 'opacity 1s';
+    overlay.style.opacity = '0';
+    setTimeout(() => overlay.remove(), 1000);
+  }, 3000);
+</script>
 
     body {
       font-family: Arial, sans-serif;
