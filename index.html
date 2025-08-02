@@ -1,4 +1,3 @@
-<!-- CÓDIGO COMPLETO AQUI ABAIXO -->
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -12,115 +11,216 @@
       --azul: #00bfff;
       --preto: #000000;
     }
-<!-- Boas-vindas com fogos de artifício -->
-<div id="welcome-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); color: white; display: flex; align-items: center; justify-content: center; flex-direction: column; z-index: 9999; text-align: center;">
-  <h1 style="font-size: 2.5em; color: #00ff55;">🎆 Bem-vindo! 🎆</h1>
-  <p style="font-size: 1.2em; color: #00bfff;">O seu "eu" do futuro te agradecerá depois!</p>
-  <canvas id="fireworks-canvas" style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none;"></canvas>
-</div>
 
-<script>
-  // Ajusta tamanho do canvas
-  const canvas = document.getElementById("fireworks-canvas");
-  const ctx = canvas.getContext("2d");
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  class Firework {
-    constructor() {
-      this.x = Math.random() * canvas.width;
-      this.y = canvas.height;
-      this.targetY = Math.random() * canvas.height / 2;
-      this.color = `hsl(${Math.random() * 360}, 100%, 50%)`;
-      this.size = 2;
-      this.velocityY = -Math.random() * 4 - 4;
-      this.exploded = false;
-      this.particles = [];
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--preto);
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
     }
 
-    update() {
-      if (!this.exploded) {
-        this.y += this.velocityY;
-        if (this.y <= this.targetY) {
-          this.exploded = true;
-          for (let i = 0; i < 30; i++) {
-            this.particles.push(new Particle(this.x, this.y, this.color));
-          }
-        }
-      } else {
-        this.particles.forEach(p => p.update());
-      }
+    header {
+      background-color: var(--verde);
+      color: var(--preto);
+      padding: 20px;
+      text-align: center;
     }
 
-    draw() {
-      if (!this.exploded) {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = this.color;
-        ctx.fill();
-      } else {
-        this.particles.forEach(p => p.draw());
-      }
-    }
-  }
-
-  class Particle {
-    constructor(x, y, color) {
-      this.x = x;
-      this.y = y;
-      this.radius = Math.random() * 2 + 1;
-      this.color = color;
-      this.velocityX = Math.random() * 6 - 3;
-      this.velocityY = Math.random() * 6 - 3;
-      this.alpha = 1;
+    .container {
+      padding: 20px;
     }
 
-    update() {
-      this.x += this.velocityX;
-      this.y += this.velocityY;
-      this.alpha -= 0.02;
+    .topo-imagens {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
     }
 
-    draw() {
-      ctx.globalAlpha = this.alpha;
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = this.color;
-      ctx.fill();
-      ctx.globalAlpha = 1;
+    .topo-imagens img {
+      width: 33.3%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 2px solid var(--azul);
     }
-  }
 
-  const fireworks = [];
+    .cta-button {
+      background-color: var(--azul);
+      color: #fff;
+      padding: 15px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 20px auto;
+      display: block;
+      animation: pulse 1.5s infinite;
+    }
 
-  function animateFireworks() {
-    ctx.fillStyle = "rgba(0,0,0,0.2)";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
 
-    if (Math.random() < 0.08) fireworks.push(new Firework());
+    .video-section, .testemunhos, .faq, .proof-section, .benefits {
+      margin: 40px 0;
+      background-color: #0a0a0a;
+      padding: 20px;
+      border-radius: 10px;
+    }
 
-    fireworks.forEach((f, i) => {
-      f.update();
-      f.draw();
-      if (f.exploded && f.particles.every(p => p.alpha <= 0)) {
-        fireworks.splice(i, 1);
-      }
-    });
+    h2 {
+      color: var(--verde);
+    }
 
-    requestAnimationFrame(animateFireworks);
-  }
+    h4 {
+      color: var(--azul);
+    }
 
-  animateFireworks();
+    .faq-item {
+      margin-bottom: 20px;
+    }
 
-  // Remove a sobreposição após 3 segundos
-  setTimeout(() => {
-    const overlay = document.getElementById('welcome-overlay');
-    overlay.style.transition = 'opacity 1s';
-    overlay.style.opacity = '0';
-    setTimeout(() => overlay.remove(), 1000);
-  }, 3000);
-</script>
-   body {
+    .proof-section img {
+      border: 3px solid var(--verde);
+      border-radius: 15px;
+      margin: 10px auto;
+      display: block;
+      max-width: 95%;
+    }
+
+    .highlight-callout {
+      background-color: var(--azul);
+      color: #000;
+      padding: 20px;
+      border-left: 5px solid var(--verde);
+      margin: 30px 0;
+      border-radius: 10px;
+    }
+
+    .contador-visitas {
+      background-color: #111;
+      padding: 10px;
+      color: var(--azul);
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 20px 0;
+      border-radius: 10px;
+    }
+
+    #whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border: none;
+      padding: 15px 20px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 24px;
+      z-index: 1000;
+    }
+
+    .slider-container {
+      width: 100%;
+      max-width: 600px;
+      margin: 30px auto;
+      overflow: hidden;
+      border-radius: 15px;
+      border: 3px solid var(--azul);
+    }
+
+    .slider {
+      display: flex;
+      width: 400%;
+      animation: slide 12s infinite;
+    }
+
+    .slider img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    @keyframes slide {
+      0%   { transform: translateX(0); }
+      20%  { transform: translateX(0); }
+      25%  { transform: translateX(-100%); }
+      45%  { transform: translateX(-100%); }
+      50%  { transform: translateX(-200%); }
+      70%  { transform: translateX(-200%); }
+      75%  { transform: translateX(-300%); }
+      95%  { transform: translateX(-300%); }
+      100% { transform: translateX(0); }
+    }
+
+    .testemunhos {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .testemunhos img {
+      width: 45%;
+      height: 300px;
+      object-fit: cover;
+      border: 3px solid var(--verde);
+      border-radius: 10px;
+    }
+
+    /* Firework animation */
+    #fireworks {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fadeOut 3s forwards;
+    }
+
+    #fireworks h1 {
+      color: var(--verde);
+      font-size: 2rem;
+      text-align: center;
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes fadeOut {
+      0% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { opacity: 0; display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div id="fireworks"><h1>🎉 Bem-vindo(a) à transformação! 🎉</h1></div>
+
+  <!-- TODO: <!-- CÓDIGO COMPLETO AQUI ABAIXO -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dos 90K Perdidos à Volta por Cima</title>
+  <style>
+    :root {
+      --verde: #00ff55;
+      --azul: #00bfff;
+      --preto: #000000;
+    }
+
+    body {
       font-family: Arial, sans-serif;
       background-color: var(--preto);
       color: #ffffff;
@@ -415,7 +515,22 @@
     }, 15000);
   </script>
 </body>
+</html>Existing page content goes here -->
+
+  <button id="whatsapp-button" onclick="window.location.href='https://wa.me/351965468531'">💬</button>
+
+  <script>
+    function atualizarContador() {
+      let numero = Math.floor(Math.random() * 30) + 301;
+      document.getElementById("contador").textContent = numero;
+      document.getElementById("numero-popup").textContent = numero + Math.floor(Math.random() * 10);
+    }
+    setInterval(atualizarContador, 2000);
+    atualizarContador();
+  </script>
+</body>
 </html>
+
 
 
 
